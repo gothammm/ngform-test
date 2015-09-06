@@ -1,0 +1,74 @@
+.rp-app-loading {
+  position: fixed;
+}
+.rp-app-loading .container {
+  background-color: #2196F3;
+  color: #fff;
+  bottom: 0px;
+  left: 0px;
+  height: 100%;
+  opacity: 1.0;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  z-index: 999999;
+  -webkit-transition: opacity 200ms linear;
+  -moz-transition: opacity 200ms linear;
+  transition: opacity 200ms linear;
+}
+.rp-app-loading .container .load-message {
+  width: 60%;
+  top: 40%;
+  position: relative;
+  margin: auto;
+}
+.rp-app-loading .container .load-message md-progress-circular {
+  float: left;
+}
+.rp-app-loading .container .load-message h1 {
+  text-align: center;
+  top: 40%;
+  position: relative;
+}
+
+.rp-reset-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.rp-customer-main {
+  background: #2196F3;
+  background: #2196F3;
+}
+
+.rp-center {
+  -webkit-align-self: center;
+  -moz-align-self: center;
+  align-self: center;
+  -ms-flex-item-align: center;
+}
+
+.rp-form-one {
+  -webkit-align-self: center;
+  -moz-align-self: center;
+  align-self: center;
+  -ms-flex-item-align: center;
+  margin: 0 auto;
+  width: 70%;
+}
+@media only screen and (max-width: 720px) {
+  .rp-form-one {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.rp-apply-button {
+  margin: auto;
+}
+.rp-apply-button .md-button {
+  padding: 15px;
+}
+
+/*# sourceMappingURL=app.css.map */

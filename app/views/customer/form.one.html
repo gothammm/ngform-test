@@ -1,0 +1,55 @@
+<md-content layout-padding class="rp-customer-main" flex layout="row">
+  <md-content layout="column" layout-sm="column" class="md-whiteframe-z2 rp-form-one">
+    <form layout-padding layout="column" ng-submit="next()" name="formOne" novalidate>
+      <md-input-container>
+        <label>First Name</label>
+        <input ng-model="one.firstName" type="text" name="firstname" ng-focus="inputFocus()" required>
+        <div ng-messages="formOne.firstname.$error">
+          <div ng-message="required">This is required.</div>
+          <div ng-message="server_error">{{error.server}}</div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Last Name</label>
+        <input ng-model="one.lastName" type="text" name="lastname" required ng-focus="inputFocus()" required>
+        <div ng-messages="formOne.lastname.$error">
+          <div ng-message="required">This is required.</div>
+          <div ng-message="server_error">{{error.server}}</div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Age</label>
+        <input ng-model="one.age" type="number" name="age" required>
+        <div ng-messages="formOne.age.$error">
+          <div ng-message="required">This is required.</div>
+          <div ng-message="number">Only numbers allowed</div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>City</label>
+        <md-select ng-model="one.city" name="city" required placeholder="Select a City">
+          <md-option ng-repeat="city in cities" value="{{city.value}}">{{city.text}}</md-option>
+        </md-select>
+      </md-input-container>
+      <md-input-container>
+        <label>Profession</label>
+        <md-select ng-model="one.profession" name="profession" required placeholder="Select a Profession">
+          <md-option ng-repeat="profession in professions" value="{{profession.value}}">{{profession.text}}</md-option>
+        </md-select>
+      </md-input-container>
+      <md-input-container>
+        <label>Mobile Number</label>
+        <input ng-model="one.mobile" type="number" name="mobile" ng-pattern="/^[7-9][0-9]{9}$/" required>
+        <div ng-messages="formOne.mobile.$error">
+          <div ng-message="required">This is required.</div>
+          <div ng-message="number">Only numbers allowed</div>
+          <div ng-message="pattern">Invalid Mobile Number</div>
+        </div>
+      </md-input-container>
+      <div flex>
+        <md-button type="reset" class="md-raised md-warn" ng-click="reset()" flex>Reset</md-button>
+        <md-button type="submit" ng-disabled="formOne.$invalid" class="md-raised md-primary" flex>Next</md-button>
+      </div>
+    </form>
+  </md-content>
+</md-content>

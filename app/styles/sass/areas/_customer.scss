@@ -1,0 +1,31 @@
+
+.rp-reset-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.rp-customer-main {
+  @include background($rp-blue);
+}
+
+.rp-center {
+  @include align-self(center);
+}
+
+.rp-form-one {
+  @include align-self(center);
+  margin: 0 auto;
+  width: 70%;
+  @media only screen and (max-width: 720px) {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.rp-apply-button {
+  margin: auto;
+  .md-button {
+    padding: 15px;
+  }
+}

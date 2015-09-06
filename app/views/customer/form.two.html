@@ -1,0 +1,58 @@
+<md-content layout-padding class="rp-customer-main" flex layout="row">
+  <md-content layout="column" layout-sm="column" class="md-whiteframe-z2 rp-form-one">
+    <form layout-padding layout="column" ng-submit="next()" name="formTwo" novalidate>
+      <md-input-container>
+        <label>PAN Card Number</label>
+        <input ng-model="two.pan" type="text" name="pan" ng-focus="inputFocus()" required>
+        <div ng-messages="formTwo.pan.$error">
+          <div ng-message="required">This is required.</div>
+          <div ng-message="server_error">{{error.server}}</div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Gross Annual Income</label>
+        <input ng-model="two.income" type="number" name="income" required ng-focus="inputFocus()" required>
+        <div ng-messages="formTwo.income.$error">
+          <div ng-message="required">This is required.</div>
+          <div ng-message="number">Invalid Format.</div>
+          <div ng-message="server_error">{{error.server}}</div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Company Name</label>
+        <input ng-model="two.companyName" type="text" name="companyName" required>
+        <div ng-messages="formTwo.companyName.$error">
+          <div ng-message="required">This is required.</div>
+          <div ng-message="number">Only numbers allowed</div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Designation</label>
+        <md-select ng-model="two.designation" name="designation" required placeholder="Designation">
+          <md-option ng-repeat="designation in designations" value="{{designation.value}}">{{designation.text}}</md-option>
+        </md-select>
+      </md-input-container>
+      <md-input-container>
+        <label>Address</label>
+        <textarea type="text" ng-model="two.address" name="address" columns="1" md-maxlength="150" required></textarea>
+        <div ng-messages="formTwo.address.$error">
+          <div ng-message="required">This is required.</div>
+          <div ng-message="maxlength">Invalid Mobile Number</div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Pincode</label>
+        <input ng-model="two.pin" type="number" name="pincode" required ng-pattern="/^\d{3}\s?\d{3}$/">
+        <div ng-messages="formTwo.pincode.$error">
+          <div ng-message="required">This is required.</div>
+          <div ng-message="number">Only numbers allowed</div>
+          <div ng-message="pattern">Invalid PIN Code</div>
+        </div>
+      </md-input-container>
+      <div flex>
+        <md-button type="reset" class="md-raised md-warn" ng-click="reset()" flex>Reset</md-button>
+        <md-button type="submit" ng-disabled="formTwo.$invalid" class="md-raised md-primary" flex>Next</md-button>
+      </div>
+    </form>
+  </md-content>
+</md-content>

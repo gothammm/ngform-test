@@ -1,0 +1,29 @@
+<md-content layout-padding class="rp-customer-main" flex layout="row">
+
+  <md-content layout="column" layout-sm="column" class="md-whiteframe-z2 rp-form-one">
+    <md-progress-linear md-mode="indeterminate" ng-if="isSaving"></md-progress-linear>
+    <form layout-padding layout="column" ng-submit="saveAndComplete()" name="formThree" novalidate>
+      <md-input-container>
+        <label>Account Type</label>
+        <md-select ng-model="three.actype" name="actype" required placeholder="Account Type">
+          <md-option ng-repeat="act in actypes" value="{{act.value}}">{{act.text}}</md-option>
+        </md-select>
+      </md-input-container>
+      <md-input-container>
+        <md-switch ng-model="three.fixedDeposit" name="fixedDeposit">Apply for Fixed Deposit</md-switch>
+      </md-input-container>
+      <md-input-container>
+        <md-switch ng-model="three.otherCC" name="othercc">Holding any other credit cards</md-switch>
+      </md-input-container>
+      <md-input-container class="rp-center">
+        <md-checkbox ng-model="agree" name="agreetnc" required>
+          Agree T&C
+        </md-checkbox>
+      </md-input-container>
+      <div flex>
+        <md-button type="reset" class="md-raised md-warn" ng-click="reset()" flex>Reset</md-button>
+        <md-button type="submit" ng-disabled="isSaving || formThree.$invalid" class="md-raised md-primary" flex>Finish</md-button>
+      </div>
+    </form>
+  </md-content>
+</md-content>
