@@ -1,5 +1,4 @@
 node_modules
 app/lib
 bower_components
-app/styles/sass/bourbon
 .sass-cache
