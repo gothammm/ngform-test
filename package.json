@@ -1,7 +1,7 @@
 {
-  "name": "angular-boilerplate",
+  "name": "ngform-test",
   "version": "0.0.0",
-  "description": "Angular Boilerplate Project",
+  "description": "Form test app",
   "dependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-connect": "^0.10.1",
